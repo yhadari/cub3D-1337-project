@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 20:15:46 by yhadari           #+#    #+#             */
-/*   Updated: 2020/12/01 11:35:13 by yhadari          ###   ########.fr       */
+/*   Updated: 2020/12/03 14:12:43 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	ft_derec(void)
 {
 	g_p.index1 = 1;
-	g_player.turnspeed = 1.8;
-	g_player.movespeed = 4.9;
+	g_player.turnspeed = 2;
+	g_player.movespeed = 8.3;
 	if (g_gt.der == 1 && g_p.index != 1)
 		g_p.angle = 270;
 	if (g_gt.der == 2 && g_p.index != 1)

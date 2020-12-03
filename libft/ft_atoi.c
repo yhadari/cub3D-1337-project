@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 10:13:57 by yhadari           #+#    #+#             */
-/*   Updated: 2020/11/25 20:40:09 by yhadari          ###   ########.fr       */
+/*   Updated: 2020/12/03 11:41:23 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,16 @@ void	ft_checkstr(char *str, int n)
 				ft_error("Resolution error");
 			i++;
 		}
+		if (n == 1)
+			ft_checkstr2(str, i, n);
+		i = 0;
+		while (str[i] != '\0' && n == 2)
+		{
+			if ((str[i] < 48 || str[i] > 57) && str[i] != 32 && str[i] != 44)
+				ft_error("color error");
+			i++;
+		}
+		i = 0;
 		ft_checkstr2(str, i, n);
 	}
 }
@@ -108,8 +118,9 @@ int		ft_atoi(char *str, int n)
 	}
 	while (str[i] != '\0' && (str[i] >= '0' && str[i] <= '9'))
 	{
-		result = result * 10 + (str[i] - '0');
-		i++;
+		result = result * 10 + (str[i++] - '0');
+		if (result > 10000)
+			g_reso = 1;
 	}
 	return (result * j);
 }

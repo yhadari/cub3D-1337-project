@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 17:09:23 by yhadari           #+#    #+#             */
-/*   Updated: 2020/12/01 10:56:51 by yhadari          ###   ########.fr       */
+/*   Updated: 2020/12/03 10:16:46 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,7 @@ typedef struct		s_sc
 {
 	int32_t			w;
 	int32_t			h;
-	uint16_t		bitcount;
+	uint16_t		bt_per_pixel;
 	int				width_in_bytes;
 	uint32_t		imagesize;
 	uint32_t		hdsize;
@@ -189,6 +189,7 @@ int					g_num_rays;
 int					g_tile;
 int					g_save;
 char				*g_cub;
+int					g_reso;
 
 void				ft_error(char *str);
 void				ft_check_r(char *save);
@@ -231,5 +232,6 @@ int					is_map(void);
 void				ft_fixtexture(int distfromstart, float dist);
 void				ft_checkargs(int argc, char **argv);
 void				ft_screenshot();
+int					ft_iscub(char *str);
 
 #endif

@@ -6,11 +6,22 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 13:01:54 by yhadari           #+#    #+#             */
-/*   Updated: 2020/11/29 20:25:52 by yhadari          ###   ########.fr       */
+/*   Updated: 2020/12/01 14:58:24 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub.h"
+
+int		ft_iscub(char *str)
+{
+	int i;
+
+	i = ft_strlen(str) - 4;
+	str = str + i;
+	if (ft_strncmp(str, ".cub", 4) != 0)
+		return (0);
+	return (1);
+}
 
 void	ft_checkargs(int argc, char **argv)
 {

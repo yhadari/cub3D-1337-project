@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 20:33:38 by yhadari           #+#    #+#             */
-/*   Updated: 2020/12/01 10:53:22 by yhadari          ###   ########.fr       */
+/*   Updated: 2020/12/03 14:17:04 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	ft_map3d3(int i)
 	{
 		g_ray[i].dis = g_ray[i].dis *
 		cos(g_ray[i].angle * RADIAN - g_p.angle * RADIAN);
-		dist = g_tile * ((g_gt.win_wid + g_gt.win_hi) / 2) / g_ray[i].dis;
+		dist = g_tile * g_gt.win_wid / g_ray[i].dis;
 		ystart = round(g_gt.win_hi / 2 - dist / 2);
 		ystart = ystart < 0 ? 0 : ystart;
 		yend = round(g_gt.win_hi / 2 + dist / 2);

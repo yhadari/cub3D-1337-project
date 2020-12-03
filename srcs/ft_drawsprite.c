@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 20:55:13 by yhadari           #+#    #+#             */
-/*   Updated: 2020/12/01 10:53:22 by yhadari          ###   ########.fr       */
+/*   Updated: 2020/12/03 14:17:01 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	ft_drawsprite(void)
 		ft_calculvector(i);
 		g_sp[i].mdist = g_sp[i].mdist * cos(FOVANGLE / 2 *
 				RADIAN - g_sp[i].alpha);
-		dist = g_tile * ((g_gt.win_wid + g_gt.win_hi) / 2) / g_sp[i].mdist;
+		dist = g_tile * g_gt.win_wid / g_sp[i].mdist;
 		tilex = g_sp[i].mray - dist / 2 + dist;
 		g_sprite.ofx = 0;
 		ft_drawsprite1(i++, tilex, tiley, dist);

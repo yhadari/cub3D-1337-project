@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/21 19:42:40 by razaha            #+#    #+#             */
-/*   Updated: 2020/12/01 10:53:22 by yhadari          ###   ########.fr       */
+/*   Updated: 2020/12/02 19:20:20 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ void	ft_screenshot(void)
 	g_sc.hdsize = 40;
 	g_sc.bfoffbits = 54;
 	g_sc.biplanes = 1;
-	g_sc.bitcount = 24;
-	g_sc.width_in_bytes = ((g_sc.w * g_sc.bitcount + 31) / 32) * 4;
+	g_sc.bt_per_pixel = 24;
+	g_sc.width_in_bytes = ((g_sc.w * g_sc.bt_per_pixel + 31) / 32) * 4;
 	g_sc.imagesize = g_sc.width_in_bytes * g_sc.h;
 	g_sc.filesize = 54 + g_sc.imagesize;
 	ft_memcpy(g_header, "BM", 2);
@@ -73,7 +73,7 @@ void	ft_screenshot(void)
 	ft_memcpy(g_header + 18, &g_sc.w, 4);
 	ft_memcpy(g_header + 22, &g_sc.h, 4);
 	ft_memcpy(g_header + 26, &g_sc.biplanes, 2);
-	ft_memcpy(g_header + 28, &g_sc.bitcount, 2);
+	ft_memcpy(g_header + 28, &g_sc.bt_per_pixel, 2);
 	ft_memcpy(g_header + 34, &g_sc.imagesize, 4);
 	ft_bitmap_calc(g_sc.imagesize, g_sc.w, g_sc.h, g_sc.width_in_bytes);
 	exit(EXIT_SUCCESS);

@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 17:33:15 by yhadari           #+#    #+#             */
-/*   Updated: 2020/12/01 11:49:08 by yhadari          ###   ########.fr       */
+/*   Updated: 2020/12/01 14:58:57 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ void			ft_readfile(void)
 	i = 0;
 	line = NULL;
 	save = NULL;
+	if (!ft_iscub(g_cub))
+		ft_error(".cub error");
 	fd = open(g_cub, O_RDWR);
 	if (fd == -1)
 		ft_error(".cub error");

@@ -6,7 +6,7 @@
 /*   By: yhadari <yhadari@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/01 20:20:13 by yhadari           #+#    #+#             */
-/*   Updated: 2020/12/01 10:53:22 by yhadari          ###   ########.fr       */
+/*   Updated: 2020/12/03 11:23:16 by yhadari          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	ft_check_r(char *save)
 	while (*save != '\0')
 		if (*(save++) != ' ')
 			ft_error("Resolution error");
-	if (g_gt.win_wid <= 0 || g_gt.win_hi <= 0)
+	if ((g_gt.win_wid <= 0 || g_gt.win_hi <= 0) && g_reso != 1)
 		ft_error("Resolution error");
-	if (g_gt.win_hi > 1440 || g_gt.win_wid > 2560)
+	if (g_gt.win_hi > 1440 || g_gt.win_wid > 2560 || g_reso == 1)
 	{
 		g_gt.win_hi = 1440;
 		g_gt.win_wid = 2560;
